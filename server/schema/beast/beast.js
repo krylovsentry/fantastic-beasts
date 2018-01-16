@@ -2,26 +2,16 @@
 
 const graphql = require('graphql');
 const client = require('./beast.client');
+const get = require('lodash.get');
 
 const beastType = new graphql.GraphQLObjectType({
     name: 'BeastType',
     fields: {
-        id: {
-            type: graphql.GraphQLString
-        },
-        title: {
-            type: graphql.GraphQLString
-        },
-        thumbnail: {
-            type: graphql.GraphQLString
-        },
-        abstract: {
+        items : {
             type: graphql.GraphQLString
         }
     }
 });
-
-const categoryType
 
 module.exports = {
     type: beastType,
