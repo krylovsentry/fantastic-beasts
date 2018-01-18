@@ -9,13 +9,15 @@ function getBeast(id) {
     return request({
         uri: BASE_PATH + 'AsSimpleJson?id=' + id.toString(),
         json: true
+    }).then((beastDescription) => {
+        return beastDescription.sections;
     });
 }
 
 //Category of beasts (e.g. Beasts, Phoenixes)
-function getBeasts(name, limit = 200) {
+function getBeasts(limit = 200) {
     return request({
-        uri: BASE_PATH + 'List?expand=1&category=' + name + '&limit=' + limit,
+        uri: BASE_PATH + 'List?expand=1&category=Beasts&limit=200',
         json: true
     });
 }
