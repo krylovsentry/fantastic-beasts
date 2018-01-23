@@ -7,6 +7,9 @@ const get = require('lodash.get');
 const beastType = new graphql.GraphQLObjectType({
     name: 'BeastType',
     fields: {
+        id: {
+          type: graphql.GraphQLString
+        },
         name: {
             type: graphql.GraphQLString
         },
