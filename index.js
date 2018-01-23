@@ -4,7 +4,7 @@ const express = require('express');
 const graphql = require('graphql').graphql;
 const graphqlHTTP = require('express-graphql');
 
-const rootSchema = require('./schema/rootSchema');
+const rootSchema = require('./server/schema/rootSchema');
 
 const app = express();
 const PORT = 3001;
@@ -14,6 +14,8 @@ app.use('/graphiql', graphqlHTTP({
     pretty: true,
     graphiql: true
 }));
+
+app.use(express.static('dist'));
 
 app.get('/graphql', (req, res) => {
     const graphqlQuery = req.query.graphqlQuery;
