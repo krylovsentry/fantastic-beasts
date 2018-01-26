@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import BeastCard from './BeastCard.jsx';
+import BeastCard from './card/BeastCard.jsx';
 import getBeasts from "../client/getBeasts";
 
 class Book extends React.Component {

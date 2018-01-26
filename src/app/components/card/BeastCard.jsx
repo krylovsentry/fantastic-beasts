@@ -1,9 +1,10 @@
 'use strict';
 
 import React from 'react';
-import getBeast from "../client/getBeast";
+import getBeast from "../../client/getBeast";
 import BeastImage from './BeastImage.jsx'
 import BeastDescription from "./BeastDescription.jsx";
+import BeastName from "./BeastName.jsx";
 
 class BeastCard extends React.Component {
     constructor() {
@@ -30,6 +31,7 @@ class BeastCard extends React.Component {
         return (
             <div style={styles.beastCard}>
                 <BeastImage image={this.props.beast.image}/>
+                <BeastName name={this.props.beast.name}/>
                 <BeastDescription description={this.props.beast.description}/>
             </div>
         );
