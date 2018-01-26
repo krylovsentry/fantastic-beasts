@@ -1,9 +1,8 @@
 'use strict';
 
 import React from 'react';
-import BeastImage from './BeastImage.jsx';
+import BeastCard from './BeastCard.jsx';
 import getBeasts from "../client/getBeasts";
-import get from 'lodash.get';
 
 class Book extends React.Component {
     constructor() {
@@ -23,11 +22,19 @@ class Book extends React.Component {
 
     render() {
         return (
-            <div>
-                {this.state.beasts.map((beast, index) => <BeastImage image={beast.image}/>)}
+            <div style={styles.rootDiv}>
+                {this.state.beasts.map((beast, index) => <BeastCard beast={beast}/>)}
             </div>
         );
     }
 }
+
+const styles = {
+    rootDiv: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between'
+    }
+};
 
 export default Book;
