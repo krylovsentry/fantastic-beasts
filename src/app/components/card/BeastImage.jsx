@@ -5,11 +5,15 @@ import React from 'react';
 class BeastImage extends React.Component {
     render() {
         return (
-            <div>
-                <img role="presentation" src={this.props.image} />
+            <div style={styles}>
+                <img role="presentation" src={this.props.image}/>
             </div>
         );
     }
 }
+
+const styles = {
+    textAlign: 'center'
+};
 
 export default BeastImage;

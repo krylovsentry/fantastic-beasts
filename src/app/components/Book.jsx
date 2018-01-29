@@ -33,7 +33,8 @@ const styles = {
     rootDiv: {
         display: 'flex',
         flexWrap: 'wrap',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        backgroundColor: '#E2DCD5'
     }
 };
 

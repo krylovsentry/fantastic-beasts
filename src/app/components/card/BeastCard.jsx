@@ -7,25 +7,6 @@ import BeastDescription from "./BeastDescription.jsx";
 import BeastName from "./BeastName.jsx";
 
 class BeastCard extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            id: 0,
-            hover: false
-        };
-    }
-
-    makeRequest(id) {
-        return getBeast(id).then((data) => {
-            this.setState({
-                id
-            });
-        });
-    }
-
-    toggleHover() {
-        this.setState({hover: !this.state.hover});
-    }
 
     render() {
         return (
@@ -40,10 +21,12 @@ class BeastCard extends React.Component {
 
 const styles = {
     beastCard: {
-        boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
+        boxShadow: '0 0 5px 0 rgba(0,0,0,0.2)',
         transition: '0.3s',
         width: '300px',
-        height: '400px'
+        height: '400px',
+        backgroundColor: '#F9F3E6',
+        margin: '5px'
     }
 };
 

@@ -16,7 +16,8 @@ let config = {
         rules: [{
             test: /\.(js|jsx)$/,
             use: 'babel-loader',
-            include: APP_DIR
+            include: APP_DIR,
+            exclude: /node_modules/
         }]
     },
     plugins: [
