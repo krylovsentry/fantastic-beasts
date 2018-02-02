@@ -4,12 +4,13 @@ import React from 'react';
 import BeastCard from './card/BeastCard.jsx';
 import getBeasts from "../client/getBeasts";
 
-class Book extends React.Component {
+class BeastsList extends React.Component {
+
     constructor() {
         super();
         this.state = {
             beasts: []
-        }
+        };
     }
 
     componentDidMount() {
@@ -27,6 +28,7 @@ class Book extends React.Component {
             </div>
         );
     }
+
 }
 
 const styles = {
@@ -38,4 +40,4 @@ const styles = {
     }
 };
 
-export default Book;
+export default BeastsList;

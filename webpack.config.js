@@ -14,12 +14,18 @@ let config = {
         filename: 'index.client.js'
     },
     module: {
-        rules: [{
-            test: /\.(js|jsx)$/,
-            use: 'babel-loader',
-            include: APP_DIR,
-            exclude: /node_modules/
-        }]
+        rules: [
+            {
+                test: /\.(js|jsx)$/,
+                use: 'babel-loader',
+                include: APP_DIR,
+                exclude: /node_modules/
+            },
+            {
+                test: /\.scss$/,
+                loader: ['style-loader', 'css-loader', 'sass-loader']
+            }
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({template: path.join(APP_DIR, 'index.html'), hash: true})
