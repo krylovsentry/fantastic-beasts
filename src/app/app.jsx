@@ -4,17 +4,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '../assets/stylesheets/fonts.scss';
 import BeastsList from "./components/BeastsList.jsx";
-import BeastPage from './components/BeastPage.jsx'
-
-import {createBrowserHistory} from 'history';
-
-import {Route, Router} from 'react-router';
+import BeastPage from "./components/BeastPage.jsx";
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 ReactDOM.render(
-    <Router history={createBrowserHistory()}>
-        <Route path='/' component={BeastsList}>
-            <Route path='beast' component={BeastPage}/>
-        </Route>
-    </Router>
+    <BrowserRouter>
+        <Switch>
+            <Route exact path='/' component={BeastsList}/>
+            <Route path='/beast' component={BeastPage}/>
+        </Switch>
+    </BrowserRouter>
     ,
     document.getElementById('react-root'));

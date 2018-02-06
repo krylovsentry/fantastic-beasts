@@ -15,7 +15,11 @@ app.use('/graphiql', graphqlHTTP({
     graphiql: true
 }));
 
-app.use(express.static('dist'));
+app.use(express.static(__dirname + '/dist'));
+
+app.get('/beast', (req, res) => {
+    res.sendFile(__dirname + '/dist/index.html');
+});
 
 app.get('/graphql', (req, res) => {
     const graphqlQuery = req.query.graphqlQuery;
