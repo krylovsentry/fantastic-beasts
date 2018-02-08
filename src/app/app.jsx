@@ -11,7 +11,7 @@ ReactDOM.render(
     <BrowserRouter>
         <Switch>
             <Route exact path='/' component={BeastsList}/>
-            <Route path='/beast' component={BeastPage}/>
+            <Route path='/beast/:id' component={BeastPage}/>
         </Switch>
     </BrowserRouter>
     ,
