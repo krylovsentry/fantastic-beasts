@@ -14,15 +14,14 @@ function getBeast(id) {
             uri: BASE_PATH + 'AsSimpleJson?id=' + id.toString(),
             json: true
         }).then((response) => {
-            response.sections[0].content.reduce((acc, item) => {
-                return {
-                    text: acc.text + ' ' + item
-                }
-            });
             return {
                 id: id,
                 name: beastDescription.items[id.toString()].title,
-                description: response.sections[0].content.text,
+                description: response.sections[0].content.reduce((acc, item) => {
+                    return {
+                        text: acc.text + ' ' + item
+                    }
+                }).text,
                 image: beastDescription.items[id.toString()].thumbnail
             }
         })
