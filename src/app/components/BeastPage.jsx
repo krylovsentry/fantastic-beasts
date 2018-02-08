@@ -3,6 +3,9 @@
 import React from 'react';
 import {Redirect} from "react-router-dom";
 import getBeast from "../client/getBeast";
+import BeastName from "./card/BeastName.jsx";
+import BeastDescription from "./card/BeastDescription.jsx";
+import BeastImage from "./card/BeastImage.jsx";
 
 class BeastPage extends React.Component {
     constructor() {
@@ -35,7 +38,9 @@ class BeastPage extends React.Component {
         } else {
             return (
                 <div>
-                    {this.state.beast.description}
+                    <BeastName name={this.state.beast.name}/>
+                    <BeastImage image={this.state.beast.image}/>
+                    <BeastDescription description={this.state.beast.description}/>
                 </div>
             );
         }
