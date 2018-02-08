@@ -37,14 +37,24 @@ class BeastPage extends React.Component {
             return <Redirect push to='/'/>
         } else {
             return (
-                <div>
-                    <BeastName name={this.state.beast.name}/>
-                    <BeastImage image={this.state.beast.image}/>
-                    <BeastDescription description={this.state.beast.description}/>
+                <div style={styles.root}>
+                    <button onClick={this.handleBackClick}>Go back</button>
+                    <div>
+                        <BeastName name={this.state.beast.name}/>
+                        <BeastImage image={this.state.beast.image}/>
+                        <BeastDescription description={this.state.beast.description}/>
+                    </div>
                 </div>
             );
         }
     }
 }
+
+const styles = {
+    backButton: {},
+    root: {
+        backgroundColor: '#E2DCD5'
+    }
+};
 
 export default BeastPage;
