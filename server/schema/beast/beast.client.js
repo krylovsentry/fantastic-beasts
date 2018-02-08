@@ -10,12 +10,22 @@ function getBeast(id) {
         uri: BASE_PATH + 'Details?ids=' + id.toString() + '&abstract=500&width=200&height=200',
         json: true
     }).then((beastDescription) => {
-        return {
-            id: id,
-            name: beastDescription.items[id.toString()].title,
-            description: beastDescription.items[id.toString()].abstract,
-            image: beastDescription.items[id.toString()].thumbnail
-        };
+        return request({
+            uri: BASE_PATH + 'AsSimpleJson?id=' + id.toString(),
+            json: true
+        }).then((response) => {
+            response.sections[0].content.reduce((acc, item) => {
+                return {
+                    text: acc.text + ' ' + item
+                }
+            });
+            return {
+                id: id,
+                name: beastDescription.items[id.toString()].title,
+                description: response.sections[0].content.text,
+                image: beastDescription.items[id.toString()].thumbnail
+            }
+        })
     });
 }
 
