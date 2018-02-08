@@ -18,8 +18,14 @@ function getBeast(id) {
                 id: id,
                 name: beastDescription.items[id.toString()].title,
                 description: response.sections[0].content.reduce((acc, item) => {
-                    return {
-                        text: acc.text + ' ' + item
+                    if (item.text) {
+                        return {
+                            text: acc.text + ' ' + item.text
+                        }
+                    } else {
+                        return {
+                            text: acc.text
+                        }
                     }
                 }).text,
                 image: beastDescription.items[id.toString()].thumbnail
@@ -31,7 +37,7 @@ function getBeast(id) {
 //Category of beasts (e.g. Beasts, Phoenixes)
 function getBeasts(limit = 200) {
     return request({
-        uri: BASE_PATH + 'List?expand=1&category=Beasts&limit=200',
+        uri: BASE_PATH + 'List?expand=1&category=Beasts&limit=' + limit,
         json: true
     }).then((beasts) => {
         return beasts.items.map((item) => {
