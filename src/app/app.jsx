@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '../assets/stylesheets/fonts.scss';
 import '../assets/stylesheets/main.scss';
+import '../assets/stylesheets/social.scss'
 import BeastsList from "./components/BeastsList.jsx";
 import BeastPage from "./components/BeastPage.jsx";
 import {BrowserRouter, Route, Switch} from 'react-router-dom';

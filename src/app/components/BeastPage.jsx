@@ -6,6 +6,7 @@ import getBeast from "../client/getBeast";
 import BeastName from "./card/BeastName.jsx";
 import BeastDescription from "./card/BeastDescription.jsx";
 import BeastImage from "./card/BeastImage.jsx";
+import '../../assets/stylesheets/buttons.scss';
 
 class BeastPage extends React.Component {
     constructor() {
@@ -38,7 +39,7 @@ class BeastPage extends React.Component {
         } else {
             return (
                 <div style={styles.rootDiv}>
-                    <button onClick={this.handleBackClick}>Go back</button>
+                    <button className="btn btn-orange btn-border" onClick={this.handleBackClick}>Go back</button>
                     <div>
                         <BeastName name={this.state.beast.name}/>
                         <BeastImage image={this.state.beast.image}/>
