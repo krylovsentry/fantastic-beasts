@@ -24,7 +24,7 @@ class BeastsList extends React.Component {
     render() {
         return (
             <div style={styles.rootDiv}>
-                {this.state.beasts.map((beast, index) => <BeastCard beast={beast}/>)}
+                {this.state.beasts.map((beast) => <BeastCard beast={beast}/>)}
             </div>
         );
     }
@@ -36,7 +36,6 @@ const styles = {
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'space-between',
-        backgroundColor: '#E2DCD5'
     }
 };
 

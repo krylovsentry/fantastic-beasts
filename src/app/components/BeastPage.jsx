@@ -37,7 +37,7 @@ class BeastPage extends React.Component {
             return <Redirect push to='/'/>
         } else {
             return (
-                <div style={styles.root}>
+                <div style={styles.rootDiv}>
                     <button onClick={this.handleBackClick}>Go back</button>
                     <div>
                         <BeastName name={this.state.beast.name}/>
@@ -52,8 +52,14 @@ class BeastPage extends React.Component {
 
 const styles = {
     backButton: {},
-    root: {
-        backgroundColor: '#E2DCD5'
+    rootDiv: {
+        boxShadow: '0px 0px 30px 6px rgba(0,0,0,0.27)',
+        backgroundColor: '#F9F3E6',
+        margin: 'auto',
+        position: 'absolute',
+        top: '0',
+        right: '0',
+        left: '0'
     }
 };
 
