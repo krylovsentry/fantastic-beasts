@@ -52,7 +52,6 @@ class BeastPage extends React.Component {
 }
 
 const styles = {
-    backButton: {},
     rootDiv: {
         boxShadow: '0px 0px 30px 6px rgba(0,0,0,0.27)',
         backgroundColor: '#F9F3E6',
